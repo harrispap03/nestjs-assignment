@@ -5,8 +5,9 @@ import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { Cat } from './interfaces/cat.interface';
+import { AuthGuard } from '@nestjs/passport';
 
-@UseGuards(RolesGuard)
+@UseGuards(AuthGuard('jwt'), RolesGuard)
 @Controller('cats')
 export class CatsController {
   constructor(private readonly catsService: CatsService) {}
