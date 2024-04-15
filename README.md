@@ -1,13 +1,32 @@
+## Tundrax NestJS assignment
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### Technologies used:  
+Core framework => NestJS
+ORM => TypeORM
+DB => PostgreSQL
+Auth library => PassportJS
 
 ## Installation
 
 ```bash
 $ npm install
 ```
+## Setting up environment variables
+
+Copy the sample environment configuration file and modify it as needed for your local environment:
+
+
+```bash
+$ cp .env.example .env
+```
+Update the .env file with:
+1. Your postgreSQL DB credentials
+2. A JWT secret (string)
+3. The env in which you'll be running the app in ("production" || "development")
+
+## Seeding the DB
+1. Checkout the script under ``src/seed.ts`` and edit the config so it aligns with the one of your db
+2. Run ``npm run seed``
 
 ## Running the app
 
@@ -35,6 +54,3 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
